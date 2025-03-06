@@ -37,6 +37,16 @@ describe("String Calculator", () => {
         expect(add("//-\n1-2")).toBe(3);
         expect(add("//#\n1#2")).toBe(3);
     });
+
+    //Test-7
+    it("should throws an error for negative numbers", () => {
+        expect(() => add("1,-2,3")).toThrow("negatives not allowed: -2");
+    });
+
+    //Test-8
+    it("should list all the negative numbers in the error", () => {
+        expect(() => add("1,-2,-3\n-5,8")).toThrow("negatives not allowed: -2, -3, -5");
+    });
 });
 
 describe("Impacts of Every New Test cases added ", () => {

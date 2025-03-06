@@ -2,7 +2,11 @@ export const add = (numbers: string): number => {
 
     if (!numbers) return 0;
 
-    const _numbers = extractValues(numbers);
+    const { _numbers, _negativeNumbers } = extractValues(numbers);
+
+    if (_negativeNumbers.length > 0) {
+        throw new Error(`negatives not allowed: ${_negativeNumbers.join(", ")}`);
+    }
 
     if (_numbers.length === 0) return 0;
     else if (_numbers.length === 1) return _numbers[0];
@@ -10,7 +14,7 @@ export const add = (numbers: string): number => {
 }
 
 
-const extractValues = (value: string): number[] => {
+const extractValues = (value: string): { _numbers: number[], _negativeNumbers: number[] } => {
 
     let delimiter = [",", "\n"];
     let numberString = value;
@@ -30,10 +34,12 @@ const extractValues = (value: string): number[] => {
     }
 
     const regex = new RegExp(`[${delimiter.join("")}]`);
-    const numbers = numberString
+    const _numbers = numberString
         .split(regex)
         .map((num) => parseInt(num.trim(), 10))
         .filter((num) => !isNaN(num));
 
-    return numbers;
+    const _negativeNumbers = _numbers.filter((num) => num < 0);
+
+    return { _numbers, _negativeNumbers };
 }
