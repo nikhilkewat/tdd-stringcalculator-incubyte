@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "string calculator tdd - assesment by incubyte",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch"
