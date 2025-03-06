@@ -3,13 +3,19 @@ tdd string calculator
 
 ## Installation
 1. Clone the repository:
-    `git clone https://github.com/nikhilkewat/tdd-stringcalculator-incubyte.git`
+    ```sh 
+    git clone https://github.com/nikhilkewat/tdd-stringcalculator-incubyte.git
+    ```
     
 2. Navigate to the project directory:
-   `cd tdd-stringcalculator-incubyte`
+    ```sh 
+   cd tdd-stringcalculator-incubyte
+   ```
 
 3. Install dependencies:
-    `npm install`
+```sh 
+    npm install
+    ```
 
 ## Usage
 
@@ -26,9 +32,12 @@ npm run dev
 To run the tests, use:
 ```sh
 npm run test
+```
 OR
+```sh
 npm run test:watch
 ```
+
 
 ## API
 # POST /add
