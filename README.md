@@ -50,3 +50,6 @@ body: {
 
 # Response
 { "result": 6 }
+
+
+![Test](./images/10.jpg)
