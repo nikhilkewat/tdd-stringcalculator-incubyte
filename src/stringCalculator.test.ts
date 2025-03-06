@@ -30,7 +30,35 @@ describe("String Calculator", () => {
         expect(add("1\n3")).toBe(4);
         expect(add("4 \n 5")).toBe(9);
     });
+
+    //Test-6
+    it("should support custom delimiters", () => {
+        expect(add("//;\n1;2")).toBe(3);
+        expect(add("//-\n1-2")).toBe(3);
+        expect(add("//#\n1#2")).toBe(3);
+    });
 });
+
+describe("Impacts of Every New Test cases added ", () => {
+
+    //Test-1
+    it(`should return 0 for empty string`, () => {
+        expect(add("\n")).toBe(0);
+        expect(add("//;\n")).toBe(0);
+    });
+
+    //Test-2
+    it(`should return 0 for empty string whith white spaces`, () => {
+        expect(add("   \n     ")).toBe(0);
+        expect(add("//;\n  ; ")).toBe(0);
+    });
+
+    //Test-3
+    it("should return the number itself if there is only one number", () => {
+        expect(add("3\n")).toBe(3);
+        expect(add("//;\n4; ")).toBe(4);
+    });
+})
 
 
 
