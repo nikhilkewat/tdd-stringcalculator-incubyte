@@ -47,6 +47,27 @@ describe("String Calculator", () => {
     it("should list all the negative numbers in the error", () => {
         expect(() => add("1,-2,-3\n-5,8")).toThrow("negatives not allowed: -2, -3, -5");
     });
+
+    //Test-9
+    it("should ignores numbers greater than 1000", () => {
+        expect(add("2,1001, 2000")).toBe(2);
+        expect(add("2,7,1001,10,1")).toBe(20);
+    });
+
+    //Test-10
+    it("should support multi-character delimiters", () => {
+        expect(add("//[***]\n1***2***3")).toBe(6);
+    });
+
+    //Test-11
+    it("should support multiple delimiters", () => {
+        expect(add("//[*][%]\n1*2%3")).toBe(6);
+    });
+
+    //Test-12
+    it("should support multiple delimiters with different lengths", () => {
+        expect(add("//[***][%%]\n1***2%%3")).toBe(6);
+    });
 });
 
 describe("Impacts of Every New Test cases added ", () => {

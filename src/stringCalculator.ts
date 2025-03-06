@@ -37,7 +37,7 @@ const extractValues = (value: string): { _numbers: number[], _negativeNumbers: n
     const _numbers = numberString
         .split(regex)
         .map((num) => parseInt(num.trim(), 10))
-        .filter((num) => !isNaN(num));
+        .filter((num) => !isNaN(num) && num <= 1000);
 
     const _negativeNumbers = _numbers.filter((num) => num < 0);
 
