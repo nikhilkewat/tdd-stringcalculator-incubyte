@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "string calculator tdd - assesment by incubyte",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "dev": "ts-node --loader ts-node/esm src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,14 @@
   },
   "homepage": "https://github.com/nikhilkewat/tdd-stringcalculator-incubyte#readme",
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
   }
 }
